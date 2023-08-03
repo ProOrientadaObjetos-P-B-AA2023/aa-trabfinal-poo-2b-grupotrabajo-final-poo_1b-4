@@ -127,8 +127,6 @@ public class ConexionDB {
 
     public String insertarCliente(Cliente cliente) {
         try {
-            cliente.establecerTotalPlanes();
-            cliente.establecerTotal();
             String strInsertEst = "INSERT INTO Cliente(nombre, cedula, ciudad, marca, modelo, numeroCelular, pagoMensual, tipoPersonal, costoMatricula, numeroPlanes, total) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = concDB.prepareStatement(strInsertEst);
             preparedStatement.setString(1, cliente.nombre);
@@ -140,8 +138,8 @@ public class ConexionDB {
             preparedStatement.setString(7, String.valueOf(cliente.pagoMensual));
             preparedStatement.setString(8, cliente.tipoPersonal);
             preparedStatement.setString(9, String.valueOf(cliente.costoMatricula));
-            preparedStatement.setString(10, String.valueOf(cliente.establecerTotalPlanes()));
-            preparedStatement.setString(11, String.valueOf(cliente.establecerTotal()));
+            preparedStatement.setString(10, String.valueOf(0));
+            preparedStatement.setString(11, String.valueOf(0));
             executePreparedStatement(preparedStatement);
         } catch (SQLException sqlException) {
             this.msj = sqlException.getMessage();

@@ -143,10 +143,6 @@ public class GestionPlanes {
         return clienteActual;
     }
 
-    public void setCliente(Cliente cliente) {
-        clienteActual = cliente;
-    }
-
     public void mostrarDatosDBCliente() {
         ArrayList<Cliente> clientes = new ConexionDB().obtenerClientes();
         String[][] datos = new String[clientes.size()][11];

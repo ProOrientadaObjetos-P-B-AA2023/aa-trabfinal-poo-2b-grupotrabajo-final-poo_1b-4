@@ -43,11 +43,11 @@ public class Cliente {
     }
 
     public void establecerDBTotal(double total) {
-        this.total = establecerTotal();
+        this.total = total;
     }
 
     public void establecerDBNTotalPlanes(int nPlanes) {
-        this.nPlanes = establecerTotalPlanes();
+        this.nPlanes = nPlanes;
     }
 
     public String toString() {
