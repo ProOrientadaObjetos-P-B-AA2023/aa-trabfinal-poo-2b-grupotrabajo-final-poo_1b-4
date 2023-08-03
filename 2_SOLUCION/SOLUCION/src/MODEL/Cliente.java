@@ -1,7 +1,5 @@
 package MODEL;
 
-import CONTROLLER.CalcularTotal;
-
 public class Cliente {
     public String nombre;
     public String cedula;
@@ -37,6 +35,10 @@ public class Cliente {
 
     public double establecerTotal() {
         total = new CalcularTotal().total(new ConexionDB().totalPlanes(cedula));
+        if (tipoPersonal.toUpperCase().equals("ESTUDIANTE"))
+            total=total-(total*0.10);
+        if (tipoPersonal.toUpperCase().equals("PROFESOR"))
+            total=total-(total*0.30);
         return total;
     }
 

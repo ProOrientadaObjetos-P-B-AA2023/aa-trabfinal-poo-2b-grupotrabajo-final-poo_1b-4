@@ -283,7 +283,7 @@ public class ConexionDB {
         return planes;
     }
 
-    public ArrayList<Plan> totalPlanes(String cedula) {
+    public ArrayList<Plan>totalPlanes (String cedula) {
         ArrayList<Plan> planes = new ArrayList<>();
         try {
             Statement statement = concDB.createStatement();
