@@ -331,8 +331,8 @@ public class ConexionDB {
                 Cliente cliente= new Cliente(resultSet.getString("nombre"),resultSet.getString("cedula"),resultSet.getString("ciudad"),resultSet.getString("marca"),
                         resultSet.getString("modelo"),resultSet.getString("numeroCelular"),resultSet.getDouble("pagoMensual"),resultSet.getString("tipoPersonal"),
                         resultSet.getDouble("costoMatricula"));
-                cliente.establecerDBNTotalPlanes(resultSet.getInt("numeroPlanes"));
-                cliente.establecerDBTotal(resultSet.getDouble("Total"));
+                cliente.establecerTotal();
+                cliente.establecerTotalPlanes();
                 clientes.add(cliente);
             }
             resultSet.close();
@@ -358,8 +358,8 @@ public class ConexionDB {
                         resultSet.getDouble("pagoMensual"),
                         resultSet.getString("tipoPersonal"),
                         resultSet.getDouble("costoMatricula"));
-                clienteActualizado.establecerDBNTotalPlanes(resultSet.getInt("numeroPlanes"));
-                clienteActualizado.establecerDBTotal(resultSet.getDouble("Total"));
+                clienteActualizado.establecerTotal();
+                clienteActualizado.establecerTotalPlanes();
                 connection.close();
                 statement.close();
                 resultSet.close();

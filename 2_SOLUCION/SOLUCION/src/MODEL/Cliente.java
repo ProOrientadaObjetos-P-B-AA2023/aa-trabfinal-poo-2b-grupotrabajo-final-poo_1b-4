@@ -42,14 +42,6 @@ public class Cliente {
         return total;
     }
 
-    public void establecerDBTotal(double total) {
-        this.total = establecerTotal();
-    }
-
-    public void establecerDBNTotalPlanes(int nPlanes) {
-        this.nPlanes = establecerTotalPlanes();
-    }
-
     public String toString() {
         return String.format("Nombre: %s%nCedula: %s%nCiudad: %s%n" +
                         "Marca: %s%nModelo: %s%nNumero de Celular: %s%n" +
